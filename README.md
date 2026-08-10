@@ -108,7 +108,7 @@ The individual signals are combined into a final strength assessment.
 
 ## Privacy
 
-SENTINEL is designed to perform password analysis locally in the browser.
+SENTINEL performs password analysis locally in the browser.
 
 Passwords are not submitted to a backend server by the application.
 
@@ -120,12 +120,11 @@ This makes SENTINEL suitable for experimenting with password-analysis concepts w
 
 | Technology | Purpose |
 |---|---|
-| PHP | Local development server / application entry point |
-| HTML5 | Application structure |
+| HTML5 | Application structure and entry point |
 | CSS3 | Interface and JARVIS-inspired visual design |
 | JavaScript | Password analysis and real-time interaction |
 
-No external backend or database is required.
+No backend, database, or PHP runtime is required.
 
 ---
 
@@ -133,7 +132,6 @@ No external backend or database is required.
 
 ### Requirements
 
-- PHP 8.x or later
 - A modern web browser
 - Git
 
@@ -148,13 +146,13 @@ git clone https://github.com/biasedfilms/sentinel.git
 Enter the project directory:
 
 ```bash
-cd sentinel
+cd SENTINEL
 ```
 
-Start the PHP development server:
+Start a local static server:
 
 ```bash
-php -S localhost:8000
+python3 -m http.server 8000
 ```
 
 Open:
@@ -163,13 +161,23 @@ Open:
 http://localhost:8000
 ```
 
+Alternatively, the application can be opened directly through `index.html` in a modern browser.
+
+---
+
+## Live Demo
+
+[**Launch SENTINEL →**](https://biasedfilms.github.io/sentinel/)
+
+Run SENTINEL directly in your browser. No installation required.
+
 ---
 
 ## Project Structure
 
 ```text
 SENTINEL/
-├── index.php
+├── index.html
 ├── script.js
 ├── style.css
 ├── common-passwords.js
