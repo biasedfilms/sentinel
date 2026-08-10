@@ -1,0 +1,532 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap');
+
+:root {
+    --bg-primary: #020811;
+    --bg-secondary: #071522;
+    --panel: #081827;
+
+    --cyan: #55ddff;
+    --cyan-bright: #a9f2ff;
+    --cyan-soft: #d9f5fa;
+
+    --white: #f2fbff;
+    --text: #dcecf2;
+    --text-secondary: #b8d0d9;
+    --text-muted: #7897a5;
+
+    --border: rgba(85, 221, 255, 0.28);
+    --border-strong: rgba(85, 221, 255, 0.65);
+
+    --warning: #ffd166;
+    --danger: #ff667a;
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: var(--white);
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(30, 130, 160, 0.20),
+            transparent 38%
+        ),
+        radial-gradient(
+            circle at 100% 100%,
+            rgba(20, 100, 130, 0.10),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #01060d,
+            #03101b 50%,
+            #020811
+        );
+
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   MAIN JARVIS PANEL
+   ========================================================= */
+
+.container {
+    position: relative;
+
+    width: min(100%, 560px);
+
+    padding: 40px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10, 30, 46, 0.97),
+            rgba(4, 15, 27, 0.98)
+        );
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.60),
+        0 0 40px rgba(85, 221, 255, 0.06);
+
+    clip-path: polygon(
+        0 18px,
+        18px 0,
+        calc(100% - 18px) 0,
+        100% 18px,
+        100% calc(100% - 18px),
+        calc(100% - 18px) 100%,
+        18px 100%,
+        0 calc(100% - 18px)
+    );
+}
+
+/* Top HUD line */
+
+.container::before {
+    content: "";
+
+    position: absolute;
+
+    top: 10px;
+    left: 30px;
+
+    width: 75px;
+    height: 1px;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 8px rgba(85, 221, 255, 0.5);
+}
+
+/* Bottom HUD line */
+
+.container::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 10px;
+    right: 30px;
+
+    width: 75px;
+    height: 1px;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 8px rgba(85, 221, 255, 0.5);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+h1 {
+    margin: 0;
+
+    color: var(--white);
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 34px;
+
+    font-weight: 600;
+
+    line-height: 1.15;
+
+    letter-spacing: 6px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 12px rgba(85, 221, 255, 0.18);
+}
+
+.subtitle {
+    margin: 10px 0 32px;
+
+    padding-top: 5px;
+
+    color: var(--cyan-soft);
+
+    font-family:
+        "Orbitron",
+        monospace;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.system-status {
+    margin-top: -12px;
+    margin-bottom: 22px;
+
+    color: var(--cyan);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 8px rgba(85, 221, 255, 0.35);
+}
+
+/* =========================================================
+   INPUT LABEL
+   ========================================================= */
+
+label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: var(--cyan-bright);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.8px;
+
+    text-transform: uppercase;
+}
+
+/* =========================================================
+   PASSWORD INPUT
+   ========================================================= */
+
+input {
+    width: 100%;
+
+    padding: 15px 16px;
+
+    border: 1px solid var(--border-strong);
+
+    border-radius: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(85, 221, 255, 0.06),
+            rgba(2, 12, 22, 0.75)
+        );
+
+    color: var(--white);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 16px;
+
+    letter-spacing: 1px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+input::placeholder {
+    color: var(--text-secondary);
+
+    opacity: 1;
+}
+
+input:focus {
+    outline: none;
+
+    border-color: var(--cyan);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(85, 221, 255, 0.10),
+            rgba(2, 12, 22, 0.75)
+        );
+
+    box-shadow:
+        0 0 18px rgba(85, 221, 255, 0.10),
+        inset 0 0 15px rgba(85, 221, 255, 0.03);
+}
+
+/* =========================================================
+   STRENGTH
+   ========================================================= */
+
+.strength-container {
+    margin-top: 30px;
+}
+
+.strength-bar {
+    position: relative;
+
+    width: 100%;
+    height: 8px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            rgba(85, 221, 255, 0.09) 0,
+            rgba(85, 221, 255, 0.09) 7px,
+            transparent 7px,
+            transparent 10px
+        );
+
+    border: 1px solid rgba(85, 221, 255, 0.20);
+
+    overflow: hidden;
+}
+
+#strength-fill {
+    width: 0%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #1685a5,
+            var(--cyan-bright)
+        );
+
+    box-shadow:
+        0 0 14px rgba(85, 221, 255, 0.75);
+
+    transition:
+        width 0.3s ease;
+}
+
+#strength {
+    margin-top: 13px;
+
+    color: var(--cyan-bright);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+}
+
+/* =========================================================
+   SECURITY PARAMETERS
+   ========================================================= */
+
+#requirements {
+    list-style: none;
+
+    margin: 27px 0 0;
+    padding: 19px 0 0;
+
+    border-top: 1px solid rgba(85, 221, 255, 0.16);
+}
+
+#requirements::before {
+    content: "SECURITY PARAMETERS";
+
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--cyan-soft);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+#requirements li {
+    margin: 10px 0;
+
+    color: var(--text);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 12px;
+
+    letter-spacing: 0.3px;
+
+    transition:
+        color 0.2s ease,
+        text-shadow 0.2s ease;
+}
+
+#requirements li.valid {
+    color: var(--cyan-bright);
+
+    text-shadow:
+        0 0 8px rgba(85, 221, 255, 0.28);
+}
+
+#requirements li.valid::before {
+    content: "◆ ";
+
+    color: var(--cyan);
+}
+
+#requirements li:not(.valid)::before {
+    content: "◇ ";
+
+    color: var(--text-muted);
+}
+
+/* =========================================================
+   WARNINGS
+   ========================================================= */
+
+#warning,
+#pattern-warning {
+    margin-top: 14px;
+
+    color: var(--warning);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    line-height: 1.6;
+
+    letter-spacing: 0.3px;
+}
+
+/* =========================================================
+   ENTROPY
+   ========================================================= */
+
+#entropy {
+    margin-top: 21px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(85, 221, 255, 0.16);
+
+    color: var(--text);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    letter-spacing: 0.5px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    position: absolute;
+
+    bottom: 18px;
+    left: 0;
+    right: 0;
+
+    text-align: center;
+
+    color: #f5f7f7;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 0.8px;
+}
+
+body {
+    position: relative;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 14px;
+    }
+
+    .container {
+        padding: 30px 23px;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+
+    .subtitle {
+        font-size: 10px;
+    }
+
+    #requirements li {
+        font-size: 11px;
+    }
+}
