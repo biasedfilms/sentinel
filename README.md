@@ -8,6 +8,12 @@ It evaluates password complexity, identifies predictable patterns, checks agains
 
 ---
 
+[**Launch SENTINEL →**](https://sentinel-mikael.vercel.app/)
+
+Run SENTINEL directly in your browser. No installation required.
+
+---
+
 ## Preview
 
 ![SENTINEL Preview](assets/sentinel-preview.png)
@@ -162,14 +168,6 @@ http://localhost:8000
 ```
 
 Alternatively, the application can be opened directly through `index.html` in a modern browser.
-
----
-
-## Live Demo
-
-[**Launch SENTINEL →**](https://biasedfilms.github.io/sentinel/)
-
-Run SENTINEL directly in your browser. No installation required.
 
 ---
 
